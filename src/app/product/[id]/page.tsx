@@ -8,6 +8,7 @@ import { FaStar } from "react-icons/fa";
 import { GrAddCircle } from "react-icons/gr";
 import { GrSubtractCircle } from "react-icons/gr";
 import { useRouter } from "next/navigation";
+import Image from 'next/image'
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -18,7 +19,6 @@ export default function ProductPage({ params }: ProductPageProps) {
   const { products, quantities, increaseQuantity, decreaseQuantity } =
     useProductStore();
   const product = products.find((p) => p.id === Number(id)) ?? null;
-  
 
   const router = useRouter();
   if (!product) {
@@ -42,10 +42,12 @@ export default function ProductPage({ params }: ProductPageProps) {
             className="cursor-pointer"
           />
         </div>
-        <img
-          className="w-[315px] h-[280px] mx-auto mt-16 object-contain"
+        <Image
+          className="mx-auto mt-16 object-contain"
           src={product.images[0]}
           alt={product.title}
+          width={315}
+          height={280}
         />
         <div className="flex justify-between gap-4 items-center mt-8">
           <h2 className="text-2xl">{product.title}</h2>

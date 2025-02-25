@@ -64,13 +64,8 @@ export default function Home() {
               <div
                 className="w-[143px] h-[213px] rounded-xl bg-[#1F1F1F] p-4 text-white text-sm flex flex-col gap-1"
               >
-                {/* <img
-                  className="w-24 h-20 mx-auto mt-2 object-contain"
-                  src={product.images[0]}
-                  alt={product.title}
-                /> */}
                 <Image 
-                  className="h-20 mx-auto mt-2 object-contain"
+                  className="mx-auto mt-2 object-contain"
                   src={product.images[0]}
                   alt={product.title}
                   width={96}
