@@ -3,6 +3,7 @@
 
 import axios from "axios";
 import Link from "next/link";
+import Image from 'next/image'
 import { FaStar, FaPlus } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useProductStore } from "@/store/useProductStore";
@@ -63,10 +64,17 @@ export default function Home() {
               <div
                 className="w-[143px] h-[213px] rounded-xl bg-[#1F1F1F] p-4 text-white text-sm flex flex-col gap-1"
               >
-                <img
+                {/* <img
                   className="w-24 h-20 mx-auto mt-2 object-contain"
                   src={product.images[0]}
                   alt={product.title}
+                /> */}
+                <Image 
+                  className="h-20 mx-auto mt-2 object-contain"
+                  src={product.images[0]}
+                  alt={product.title}
+                  width={96}
+                  height={80}
                 />
                 <div className="flex gap-1 items-center">
                   <FaStar color="yellow" />
